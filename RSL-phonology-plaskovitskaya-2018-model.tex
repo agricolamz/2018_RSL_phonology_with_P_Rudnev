@@ -1,0 +1,55 @@
+\documentclass[tikz]{standalone}
+
+\usepackage[linguistics]{forest}
+\usetikzlibrary{positioning}
+
+\begin{document}
+
+
+\begin{forest} nice empty nodes
+  [Sign,name=sign
+  [Articulators,name=art
+  [,name=sisterofpassive
+  [{Active\\articulator},name=actart
+  [,name=sisteroffacing
+  [,name=sisterofdynamic
+    [{Hand\\configuration},name=handconf
+  [,name=motherofwidth
+  [,name=sisterofwidth
+  [{Finger\\selection},name=fingsel
+  ]
+  ]
+  ]
+  ]  
+  ]]]]]]
+  \node [left = 2em of art] (manner) {Manner} ;
+  \node [right = 2em of sisterofpassive] (passive) {Passive articulator} ;
+  \node [below left = 1em of sisterofpassive] (mult) {Multiple articulators} ;
+  \node [below = 1em of passive] (location) {Location} ;
+  \node [right = 2em of location] (trajectory) {Trajectory} ;
+  \node [below = 1em of trajectory] (path) {Path} ;
+  \node [right = 2em of path] (setting) {Setting} ;
+  \node [below right = 1em of sisteroffacing] (facing) {Facing} ;
+  \node [below left = 1em of sisterofdynamic] (dynamic) {Dynamic orientation} ;
+  \node [below right = 1.5em of sisterofdynamic] (focus) {Focus} ;
+  \node [below = 3.5em of focus] (width) {Width} ;
+  \node [below = 4em of dynamic] (curve) {Curve} ;
+  \node [below = .75em of width] (aperture) {Aperture} ;
+  \node [below left = 2em of setting] (passive2) {Passive articulator} ;
+  \draw (sign.south) -- (manner.north) ;
+  \draw (art.south) -- (passive.north) ;
+  \draw (sisterofpassive.south) -- (mult.north) ;
+  \draw (passive.south) -- (location.north) ;
+  \draw (passive.south) -- (trajectory.north) ;
+  \draw (trajectory.south) -- (path.north) ;
+  \draw (trajectory.south) -- (setting.north) ;
+  \draw ([yshift=-2ex]actart.south) -- (facing.north) ;
+  \draw ([yshift=-3ex]sisteroffacing.south) -- (dynamic.north) ;
+  \draw (sisterofdynamic.south) -- (focus.north) ;
+  \draw ([yshift=-1ex]handconf.south) -- (width.north) ;
+  \draw (motherofwidth.south) -- (curve.north) ;
+  \draw ([yshift=3ex]sisterofwidth.south) -- (aperture.north) ;
+  \draw (passive.south) -- ([xshift=7ex]passive2.north) ;
+\end{forest}
+
+\end{document}
