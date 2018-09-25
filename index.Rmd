@@ -251,3 +251,32 @@ data_frame(value = colMeans(!is.na(df[,-c(1, 22:25)])),
   labs(x="", y = "ratio in the whole dataset")
 ```
 
+Давай-ка выделим автоматически двуручные жесты:
+
+```{r}
+df %>% 
+  mutate(two_handed = rowSums(!is.na(df[,14:20]))) %>% 
+  ggplot(aes(`1`, `2`, color = two_handed, label = paste(Sign, two_handed)))+
+  geom_text(alpha = 0.6)
+```
+
+Видно, что чем ось 1 отвечает за количество двуручных признаков в жесте.
+
+А вторая ось отвечает за необычные признаки первой руки:
+
+* H1-aperture closed-open
+* H1-curve curved-straight
+* H1-bent bent-straight
+* H1-width pointed-wide
+
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`))+
+  geom_text(data = variables, aes(`1`, `2`, label = var_names))+
+  geom_point(color = "red")+
+  scale_x_continuous(limits = c(-0.03, 0.06))+
+  xlim(-0.02, 0.02)+
+  ylim(-0.01, 0.01)
+```
+
+
