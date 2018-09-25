@@ -11,19 +11,20 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warnings = FALSE, fig.width = 12, fig.height = 7)
 library(tidyverse)
+theme_set(theme_bw())
 ```
 
 У нас есть Тошина разметка, что мы можем сказать интересного на ее основании? Там есть следующие названия столбцов:
 
 ```{r}
-df <- read.csv("Tosha_annotation.csv", na.strings = "")
+df <- read_csv("Tosha_annotation.csv", na = "")
 colnames(df)
 ```
 
 Я хочу найти аутлайеров как среди точек, так и среди наблюдаемых значений. Построю MCA:
 
 ```{r}
-MCA <- MASS::mca(df[,-c(1, 22, 23)])
+MCA <- MASS::mca(read.csv("Tosha_annotation.csv", na.strings = "")[,-c(1, 22, 23)])
 df <- cbind(df, MCA$rs)
 variables <- as_data_frame(MCA$cs)
 variables$var_names <- rownames(MCA$cs)
@@ -33,76 +34,76 @@ variables$var_names <- rownames(MCA$cs)
 
 
 ##  {.tabset .tabset-fade .tabset-pills}
+
+### Meaning
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, label = Sign))+
+  geom_text()
+```
+
 ### H1.FingerSelection
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H1.FingerSelection))+
+  ggplot(aes(`1`, `2`, color = `H1 FingerSelection`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### H1.Aperture
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H1.Aperture))+
+  ggplot(aes(`1`, `2`, color = `H1 Aperture`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### H1.Curve
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H1.Curve))+
+  ggplot(aes(`1`, `2`, color = `H1 Curve`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### H1.Bent
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H1.Bent))+
+  ggplot(aes(`1`, `2`, color = `H1 Bent`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### H1.Facing
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H1.Facing))+
+  ggplot(aes(`1`, `2`, color = `H1 Facing`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### H1.Focus
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H1.Focus))+
+  ggplot(aes(`1`, `2`, color = `H1 Focus`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### H1.Width
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H1.Width))+
+  ggplot(aes(`1`, `2`, color = `H1 Width`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### Dynamic.Orientation
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = Dynamic.Orientation))+
+  ggplot(aes(`1`, `2`, color = `Dynamic Orientation`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### Location
@@ -110,8 +111,7 @@ df %>%
 df %>% 
   ggplot(aes(`1`, `2`, color = Location))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### Plane
@@ -119,8 +119,7 @@ df %>%
 df %>% 
   ggplot(aes(`1`, `2`, color = Plane))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### Settings
@@ -128,8 +127,7 @@ df %>%
 df %>% 
   ggplot(aes(`1`, `2`, color = Settings))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### Path
@@ -137,71 +135,63 @@ df %>%
 df %>% 
   ggplot(aes(`1`, `2`, color = Path))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### H2.FingerSelection
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H2.FingerSelection))+
+  ggplot(aes(`1`, `2`, color = `H2 FingerSelection`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### H2.Aperture
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H2.Aperture))+
+  ggplot(aes(`1`, `2`, color = `H2 Aperture`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### H2.Curve
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H2.Curve))+
+  ggplot(aes(`1`, `2`, color = `H2 Curve`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### H2.Bent
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H2.Bent))+
+  ggplot(aes(`1`, `2`, color = `H2 Bent`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### H2.Width
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H2.Width))+
+  ggplot(aes(`1`, `2`, color = `H2 Width`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### H2.Facing
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H2.Facing))+
+  ggplot(aes(`1`, `2`, color = `H2 Facing`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### H2.Focus
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = H2.Focus))+
+  ggplot(aes(`1`, `2`, color = `H2 Focus`))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
 ### Manner
@@ -209,28 +199,18 @@ df %>%
 df %>% 
   ggplot(aes(`1`, `2`, color = Manner))+
   geom_point()+
-  stat_ellipse()+
-  theme_bw()
+  stat_ellipse()
 ```
 
-Что это за аутлайеры справа? <br>
+## 
+
+Что это за аутлайеры? <br>
 
 ```{r}
 df %>% 
-  filter(`1` < -0.0007) %>% 
   arrange(desc(`1`)) %>% 
-  select(labeled_url, `1`, `2`) %>% 
-  DT::datatable(escape = FALSE, options = list(pageLength = 50, dom = 'ftip'))
-```
-
-Что это за глаголы снизу? <br>
-
-```{r}
-df %>% 
-  filter(`2` < -0.0025) %>% 
-  arrange(desc(`2`)) %>% 
   select(labeled_url, `1`,`2`) %>% 
-  DT::datatable(escape = FALSE, options = list(pageLength = 50, dom = 'ftip'))
+  DT::datatable(escape = FALSE, options = list(pageLength = 10, dom = 'ftip'))
 ```
 
 Вот переменные: <br>
@@ -239,7 +219,7 @@ df %>%
 variables %>% 
   ggplot(aes(`1`, `2`, label = var_names))+
   geom_text()+
-  theme_bw()
+  scale_x_continuous(limits = c(-0.03, 0.06))
 ```
 
 Чего-то слева торчат переменные, относящиеся к правой руке. Интересно. Может быть это какие-то двуручные? Тогда чего их так мало... Надо будет разобраться.
@@ -251,13 +231,23 @@ df %>%
   ggplot(aes(`1`, `2`))+
   geom_text(data = variables, aes(`1`, `2`, label = var_names))+
   geom_point(color = "red")+
-  theme_bw()
+  scale_x_continuous(limits = c(-0.03, 0.06))
 ```
 
+## Тошина модель
+
+![](RSL-phonology-plaskovitskaya-2018-model.jpg)
+
+Насколько важны все узлы?
 
 ```{r}
-df %>% 
-  select(labeled_url, `1`,`2`) %>% 
-  DT::datatable(escape = FALSE, options = list(pageLength = 10, dom = 'ftip'))
+data_frame(value = colMeans(!is.na(df[,-c(1, 22:25)])),
+           features = names(colMeans(!is.na(df[,-c(1, 22:25)])))) %>% 
+  mutate(features = reorder(features, value)) %>% 
+  ggplot(aes(features, value, label = round(value, 3)))+
+  ggrepel::geom_text_repel()+
+  geom_point()+
+  coord_flip()+
+  labs(x="", y = "ratio in the whole dataset")
 ```
 
