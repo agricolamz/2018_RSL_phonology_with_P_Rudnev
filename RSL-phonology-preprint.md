@@ -18,6 +18,7 @@ lang: en-GB
     * MCA analysis for all entries
 * we discovered 3 clusters corresponding to 
     * two-hand signs 
-    * cluster 2
-    * cluster 3
+    * cluster 2 (defined by H1 features including movement to a physiologically less tense position)
+    * cluster 3 (less marked class comprising one-hand signs defined by H1 features including movement to a physiologically more tense position)
+    * the MCA groups the values of the Width, Curve and Aperture nodes from @Plaskovitskaya:2018 together, hinting at a potential simplification of her model. In particular, 
     
