@@ -17,14 +17,23 @@ theme_set(theme_bw())
 У нас есть Тошина разметка, что мы можем сказать интересного на ее основании? Там есть следующие названия столбцов:
 
 ```{r}
-df <- read_csv("Tosha_annotation.csv", na = "")
+read_csv("Tosha_annotation.csv", na = "") %>% 
+  filter(Sign != "человек человек связь") -> df
 colnames(df)
 ```
 
 Я хочу найти аутлайеров как среди точек, так и среди наблюдаемых значений. Построю MCA:
 
 ```{r}
-MCA <- MASS::mca(read.csv("Tosha_annotation.csv", na.strings = "")[,-c(1, 22, 23)])
+read_csv("Tosha_annotation.csv", na = "") %>% 
+  filter(Sign != "человек человек связь") %>% 
+  select(-c(1, 22, 23)) %>% 
+  mutate_all(.funs = function(x) {ifelse(is.na(x), "", x)}) ->
+  df_mca
+
+df_mca <- as.data.frame(sapply(df_mca , factor))
+
+MCA <- MASS::mca(df_mca)
 df <- cbind(df, MCA$rs)
 variables <- as_data_frame(MCA$cs)
 variables$var_names <- rownames(MCA$cs)
@@ -279,4 +288,17 @@ df %>%
   ylim(-0.01, 0.01)
 ```
 
+
+```{r}
+df[,3:21] %>%
+  mutate_all(.funs = function(x){str_detect(x, "-")}) %>% 
+  mutate(movement = rowSums(., na.rm = TRUE)) %>% 
+  select(movement) %>% 
+  unlist() ->
+  df$movement
+
+df %>% 
+  ggplot(aes(`1`, `2`, color = movement, label = paste(Sign, movement)))+
+  geom_point(alpha = 0.6)
+```
 

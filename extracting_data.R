@@ -3,7 +3,7 @@ library(tidyverse)
 library(xml2)
 
 # get the column names from one file
-df1 <- read_xml("Term_paper/dataAnatation/10030.eaf")
+df1 <- read_xml("Term_paper/dataAnatation/3862.eaf")
 sapply(3:23, function(x){
   xml_attrs(xml_child(df1, x))[["TIER_ID"]]
 }) -> columns
@@ -19,10 +19,10 @@ sapply(seq_along(files), function(i){
   
   sapply(3:23, function(x){
     if(str_detect(as.character(xml_child(df, x)), "ANNOTATION_VALUE")){
-      str_sub(str_extract(as.character(
-        xml_child(xml_child(xml_child(df, x)))), 
-        "ANNOTATION_VALUE>.*</ANNOTATION_VALUE"), 18, -19)
-    } else{
+        paste(str_sub(unlist(str_extract_all(as.character(
+          xml_child(df, x)), 
+          "ANNOTATION_VALUE>.*</ANNOTATION_VALUE")), 18, -19), collapse = " ")
+      } else{
         ""
       }
   }) -> values
@@ -31,8 +31,6 @@ sapply(seq_along(files), function(i){
   final[i,] <<- values
 
   })
-
-final2 <- final
 
 as.tibble(final) ->
   final
