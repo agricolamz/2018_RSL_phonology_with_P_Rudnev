@@ -12,6 +12,8 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warnings = FALSE, fig.width = 12, fig.height = 7)
 library(tidyverse)
 theme_set(theme_bw())
+
+# /home/agricolamz/work/articles/2018_Tosha_preprint_SL_annotation_verbs/repository
 ```
 
 У нас есть Тошина разметка, что мы можем сказать интересного на ее основании? Там есть следующие названия столбцов:

@@ -4,6 +4,7 @@ library(xml2)
 
 # get the column names from one file
 df1 <- read_xml("Term_paper/dataAnatation/3862.eaf")
+
 sapply(3:23, function(x){
   xml_attrs(xml_child(df1, x))[["TIER_ID"]]
 }) -> columns
@@ -36,7 +37,9 @@ as.tibble(final) ->
   final
 
 colnames(final) <- c(columns, "url")
- 
+
+final$file <- str_extract(list.files("Term_paper/data/"), "[А-я].*[А-я]")
+
 final %>% 
   mutate_all(.funs = as.character) %>% 
   mutate(url = paste0(
@@ -52,4 +55,4 @@ final %>%
          )) ->
   final
 
-write_csv(final, "Tosha_annotation.csv", na = "")
+write_csv(final, "repository/Tosha_annotation.csv", na = "")
