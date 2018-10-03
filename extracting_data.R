@@ -56,3 +56,30 @@ final %>%
   final
 
 write_csv(final, "repository/Tosha_annotation.csv", na = "")
+
+# extract segment info from manualy prepared file -------------------------
+final <- df[FALSE, ]
+
+sapply(1:nrow(df), function(id) {
+  print(id)
+  if (sum(str_detect(df[id, 2:21], " "), na.rm = TRUE) == 0) {
+    final[nrow(final)+1,] <<- df[id, ]
+  } else{
+    spaces <- str_which(df[id, 2:21], " ") + 1
+    spaces_n <- sum(str_count(df[id, 2:21], " "), na.rm = TRUE) / length(spaces)
+    n <- 1
+    while (n <= spaces_n + 1) {
+      final[nrow(final)+1,] <<- df[id, ]
+      n <- n + 1
+    }
+    sapply(seq_along(spaces), function(x) {
+      final[(nrow(final)-spaces_n):(nrow(final)), spaces[x]] <<- 
+        str_split(df[id, spaces], " ")[[1]]
+    })
+  }
+})
+
+final %>% 
+  write_csv("segments.csv", na = "")
+
+

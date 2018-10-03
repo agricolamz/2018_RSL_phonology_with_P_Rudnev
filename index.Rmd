@@ -19,8 +19,7 @@ theme_set(theme_bw())
 У нас есть Тошина разметка, что мы можем сказать интересного на ее основании? Там есть следующие названия столбцов:
 
 ```{r}
-read_csv("Tosha_annotation.csv", na = "") %>% 
-  filter(Sign != "человек человек связь") -> df
+df <- read_csv("Tosha_annotation.csv", na = "")
 colnames(df)
 ```
 
