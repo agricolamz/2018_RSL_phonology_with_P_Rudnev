@@ -1,0 +1,84 @@
+\documentclass[tikz]{standalone}
+
+\usepackage[linguistics]{forest}
+\usetikzlibrary{positioning,fit,shapes}
+
+\begin{document}
+
+
+\begin{forest} %nice empty nodes
+  [Sign,name=sign
+   [Articulators,name=art
+  %[,name=sisterofpassive
+[\phantom{ha}\dots\phantom{ha},no edge,draw=black,node options={ellipse},name=nonmanual]
+   [{Active\\articulator},name=actart
+  [Location]
+  [Articulation,name=sisteroffacing
+   [Dynamic\\orientation]
+    [{Hand\\configuration},name=handconf
+    [Width]
+    [Curve]
+    [Aperture]
+  [{Finger\\selection},name=fingsel
+  [1-st] [2-nd] [3-rd] [4-th] [thumb] [fist] 
+  ]
+  ]
+  ]
+  [Facing]
+  [Trajectory
+  [Path] [Setting]
+  ]
+  [Focus]
+  ]
+  [{Passive\\articulator},name=passart
+  [Location]
+  [Articulation,name=sisteroffacing
+   [Dynamic\\orientation]
+    [{Hand\\configuration},name=handconf
+    [Width]
+    [Curve]
+    [Aperture]
+  [{Finger\\selection},name=fingsel
+  [1-st] [2-nd] [3-rd] [4-th] [thumb] [fist] 
+  ]
+  ]
+  ]
+  [Facing]
+  [Trajectory
+  [Path] [Setting]
+  ]
+  [Focus]
+  ]
+  %]  
+  ]
+  % [Passive\\articulator,name=passive
+% [Location]
+% [Articulation%,name=sisteroffacing
+% [Facing]
+% [%,name=sisterofdynamic
+%     [{Hand\\configuration},name=handconfpass
+%   [,name=motherofwidthpass
+%   [,name=sisterofwidthpass
+%   [{Finger\\selection},name=fingselpass
+%   [1-st] [2-nd] [3-rd] [4-th] [thumb] [fist] 
+%   ]
+%   ]
+%   ]]]]
+%   %]  
+%   [Trajectory,name=trajpass
+% [Path] [Setting]
+%   ]
+%   ]
+%   ]
+  [Manner,name=manner
+[tense] [repeated] [laceration] [alternating] [bidirectional]
+  ]]
+  %\node [left = 2em of art] (manner) {Manner} ;
+  %\node [right = .25em of actart] (passive) {Passive articulator} ;
+  %\node [left = 1em of actart, draw=black, ellipse] (nonmanual) {\phantom{ha}\dots\phantom{ha}} ;
+  \node [below = -.5ex of nonmanual] (nonman) {Non-manual} ;
+    \draw (art.south) -- ([xshift=1em]nonmanual.north) ;
+   \draw (art.south) -- ([xshift=-1em]nonmanual.north) ;
+ \end{forest}
+
+\end{document}
