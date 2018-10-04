@@ -316,7 +316,7 @@ data_frame(value = colMeans(!is.na(df[,-c(1, 12, 21:26, 33:35)])),
 ```{r}
 df %>% 
   mutate(two_handed = rowSums(!is.na(df[, c(14:20, 30:32)]))) %>% 
-  ggplot(aes(`1`, `2`, color = two_handed, label = paste(Sign, two_handed)))+
+  ggplot(aes(`1`, `2`, color = two_handed, label = paste(label, two_handed)))+
   geom_text(alpha = 0.6)
 ```
 
@@ -334,9 +334,9 @@ df %>%
 
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = iconic, z = label))+
-  geom_point() ->
-  plot
-plotly::ggplotly(plot, tooltip = "label")
+  ggplot(aes(`1`, `2`, color = iconic))+
+  geom_point()+
+  stat_ellipse()
 ```
 
+Хотя большинство жестов оутлайеров все же иконичны, надо отметить, что в основном центральном кластере они представлены достаточно равномерно.
