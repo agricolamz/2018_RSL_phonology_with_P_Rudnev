@@ -82,8 +82,18 @@ sapply(1:nrow(df), function(id) {
   }
 })
 
-final %>% 
-  write_csv("segments.csv", na = "")
+final %>%
+  group_by(Sign) %>% 
+  mutate(segment = 1:n(),
+         manner_tense = str_detect(Manner, "tense"),
+         manner_repeated = str_detect(Manner, "repeated"),
+         manner_laceration = str_detect(Manner, "laceration"),
+         manner_symmetrical = str_detect(Manner, "symmetrical"),
+         manner_alternating = str_detect(Manner, "alternating"),
+         manner_biderectional = str_detect(Manner, "biderectional"),
+         manner_symmetrical = str_detect(Manner, "crossed")) %>% 
+  select(-Manner) %>% 
+  write_csv("repository/segments.csv", na = "")
 
 
 # df %>% 

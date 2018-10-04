@@ -19,17 +19,16 @@ theme_set(theme_bw())
 У нас есть Тошина разметка, что мы можем сказать интересного на ее основании? Там есть следующие названия столбцов:
 
 ```{r}
-df <- read_csv("Tosha_annotation.csv", na = "")
+df <- read_csv("segments.csv", na = "")
+df$label <- paste(df$Sign, df$segment)
 colnames(df)
 ```
 
 Я хочу найти аутлайеров как среди точек, так и среди наблюдаемых значений. Построю MCA:
 
 ```{r}
-read_csv("Tosha_annotation.csv", na = "") %>% 
-  filter(Sign != "человек человек связь") %>% 
-  select(-c(1, 22, 23)) %>% 
-  mutate_all(.funs = function(x) {ifelse(is.na(x), "", x)}) ->
+read_csv("segments.csv", na = "") %>% 
+  select(-c(1,12, 21:26))  ->
   df_mca
 
 df_mca <- as.data.frame(sapply(df_mca , factor))
@@ -48,9 +47,13 @@ variables$var_names <- rownames(MCA$cs)
 ### Meaning
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, label = Sign))+
-  geom_text()
+  ggplot(aes(`1`, `2`, z = label))+
+  geom_point() ->
+  plot
+plotly::ggplotly(plot, tooltip = "label")
 ```
+
+Индексы  I и II -- это разные слова. Числа обозначают номер сегмента.
 
 ### H1.FingerSelection
 ```{r}
@@ -204,10 +207,58 @@ df %>%
   stat_ellipse()
 ```
 
-### Manner
+### manner_tense
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`, color = Manner))+
+  ggplot(aes(`1`, `2`, color = manner_tense))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### manner_repeated
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = manner_repeated))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### manner_laceration
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = manner_laceration))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### manner_symmetrical
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = manner_symmetrical))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### manner_alternating
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = manner_alternating))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### manner_biderectional
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = manner_biderectional))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### manner_alternating
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = manner_alternating))+
   geom_point()+
   stat_ellipse()
 ```
@@ -228,11 +279,11 @@ df %>%
 ```{r}
 variables %>% 
   ggplot(aes(`1`, `2`, label = var_names))+
-  geom_text()+
-  scale_x_continuous(limits = c(-0.03, 0.06))
+  geom_text()
+#  scale_x_continuous(limits = c(-0.03, 0.06))
 ```
 
-Чего-то слева торчат переменные, относящиеся к правой руке. Интересно. Может быть это какие-то двуручные? Тогда чего их так мало... Надо будет разобраться.
+Чего-то справа торчат переменные, относящиеся к правой руке.
 
 А вот все вместе: <br>
 
@@ -240,8 +291,7 @@ variables %>%
 df %>% 
   ggplot(aes(`1`, `2`))+
   geom_text(data = variables, aes(`1`, `2`, label = var_names))+
-  geom_point(color = "red")+
-  scale_x_continuous(limits = c(-0.03, 0.06))
+  geom_point(color = "red")
 ```
 
 ## Тошина модель
@@ -251,8 +301,8 @@ df %>%
 Насколько важны все узлы?
 
 ```{r}
-data_frame(value = colMeans(!is.na(df[,-c(1, 22:25)])),
-           features = names(colMeans(!is.na(df[,-c(1, 22:25)])))) %>% 
+data_frame(value = colMeans(!is.na(df[,-c(1, 12, 21:26, 33:35)])),
+           features = names(colMeans(!is.na(df[,-c(1, 12, 21:26, 33:35)])))) %>% 
   mutate(features = reorder(features, value)) %>% 
   ggplot(aes(features, value, label = round(value, 3)))+
   ggrepel::geom_text_repel()+
@@ -265,7 +315,7 @@ data_frame(value = colMeans(!is.na(df[,-c(1, 22:25)])),
 
 ```{r}
 df %>% 
-  mutate(two_handed = rowSums(!is.na(df[,14:20]))) %>% 
+  mutate(two_handed = rowSums(!is.na(df[, c(14:20, 30:32)]))) %>% 
   ggplot(aes(`1`, `2`, color = two_handed, label = paste(Sign, two_handed)))+
   geom_text(alpha = 0.6)
 ```
@@ -278,28 +328,15 @@ df %>%
 * H1-curve curved-straight
 * H1-bent bent-straight
 * H1-width pointed-wide
+* H1-Orientation forward-neutral
+
+## Иконичность
 
 ```{r}
 df %>% 
-  ggplot(aes(`1`, `2`))+
-  geom_text(data = variables, aes(`1`, `2`, label = var_names))+
-  geom_point(color = "red")+
-  scale_x_continuous(limits = c(-0.03, 0.06))+
-  xlim(-0.02, 0.02)+
-  ylim(-0.01, 0.01)
-```
-
-
-```{r}
-df[,3:21] %>%
-  mutate_all(.funs = function(x){str_detect(x, "-")}) %>% 
-  mutate(movement = rowSums(., na.rm = TRUE)) %>% 
-  select(movement) %>% 
-  unlist() ->
-  df$movement
-
-df %>% 
-  ggplot(aes(`1`, `2`, color = movement, label = paste(Sign, movement)))+
-  geom_point(alpha = 0.6)
+  ggplot(aes(`1`, `2`, color = iconic, z = label))+
+  geom_point() ->
+  plot
+plotly::ggplotly(plot, tooltip = "label")
 ```
 
