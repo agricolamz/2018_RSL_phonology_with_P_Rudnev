@@ -58,6 +58,9 @@ final %>%
 write_csv(final, "repository/Tosha_annotation.csv", na = "")
 
 # extract segment info from manualy prepared file -------------------------
+
+df <- read_csv("repository/Tosha_annotation.csv", na = "")
+
 final <- df[FALSE, ]
 
 sapply(1:nrow(df), function(id) {
@@ -74,7 +77,7 @@ sapply(1:nrow(df), function(id) {
     }
     sapply(seq_along(spaces), function(x) {
       final[(nrow(final)-spaces_n):(nrow(final)), spaces[x]] <<- 
-        str_split(df[id, spaces], " ")[[1]]
+        str_split(df[id, spaces], " ")[[x]]
     })
   }
 })
@@ -83,3 +86,6 @@ final %>%
   write_csv("segments.csv", na = "")
 
 
+# df %>% 
+#   mutate(`H1 Facing` = replace(`H1 Facing`, `H1 Facing` == "tips tips", "tips")) %>%
+#   write_csv("repository/Tosha_annotation.csv", na = "")
