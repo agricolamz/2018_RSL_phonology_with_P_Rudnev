@@ -99,3 +99,12 @@ final %>%
 # df %>% 
 #   mutate(`H1 Facing` = replace(`H1 Facing`, `H1 Facing` == "tips tips", "tips")) %>%
 #   write_csv("repository/Tosha_annotation.csv", na = "")
+
+
+# creating dataset with doubling of the simetrical manner -----------------
+
+df <- read_csv("segments.csv", na = "")
+
+df %>% 
+  mutate(`H2 FingerSelection` = if_else(manner_symmetrical, `H1 FingerSelection`, `H2 FingerSelection`)) %>% 
+  View()
