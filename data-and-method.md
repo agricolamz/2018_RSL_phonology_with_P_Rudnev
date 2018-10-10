@@ -6,9 +6,14 @@ The corpus consists of  400 ELAN v.5.1-annotated, primarily monomorphemic, cita
 
 * float illustrating an annotated lexical entry?
 
-
-
 ## Results ##
+
+We initially subjected all the entries to the Multiple Correspondence Analysis (MCA) with a view to identifying natural classes based on certain elements of the annotation.
+
+* we discovered 3 clusters corresponding to 
+    * two-hand signs 
+    * cluster 2 (defined by H1 features including movement to a physiologically less tense position)
+    * cluster 3 (less marked class comprising one-hand signs defined by H1 features including movement to a physiologically more tense position)
 
 ## @Plaskovitskaya:2018 ##
 
@@ -17,7 +22,9 @@ The model in @Plaskovitskaya:2018 is a modified version of Van der Kooij's [-@va
 ![RSL phonology [@Plaskovitskaya:2018]](RSL-phonology-plaskovitskaya-2018-model.pdf)
 
   * **major problem with @Plaskovitskaya:2018: words vs. segments**
+  * having amended Plaskovitskaya's original annotation scheme on the basis of the intermediate results, we have isolated 515 segments---rather than words---on which to run the MCA.
   * we propose that Plaskovitskaya's [-@Plaskovitskaya:2018] analysis can be simplified further
+  
   
   
 ![Revised model](RSL-phonology-model-revised.pdf)
