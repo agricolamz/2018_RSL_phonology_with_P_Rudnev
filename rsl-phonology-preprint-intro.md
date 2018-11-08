@@ -6,5 +6,5 @@ This paper aims at showcasing the phonological diversity of RSL on the basis of 
 
 Having analysed 400 monosyllabic verbs from Plaskovitskaya's [-@Plaskovitskaya:2018] annotated corpus of the Belarusian dialect of RSL, we claim that using even a modest set of data in combination with a crude phonological description [@Plaskovitskaya:2018] it is possible to detect clear-cut phonological patterns. 
 
-The paper is structured as follows. 
+The paper is structured as follows. In [Data and method]
 
