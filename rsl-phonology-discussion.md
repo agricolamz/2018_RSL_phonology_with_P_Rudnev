@@ -2,9 +2,9 @@
 lang: en-GB
 ---
 
-# Discussion #
+# Discussion {#sec:discussion}
 
 Put discussion here.
 
-# References #
+
 
