@@ -26,7 +26,7 @@ The sign involves two articulators: an active articulator (i.e. the dominant ha
 
 Whilst Plaskovitskaya's [-@Plaskovitskaya:2018] model can handle 1-hand signs reasonably well, a complication arises when it comes to 2-hand signs. Even though the model comes equipped with enough flexibility to accommodate those signs which contain multiple articulators and which are asymmetrical (cf. \textsc{betray} above, where the location parameter for the entire sign is encoded into the passive articulator), it is symmetrical 2-hand signs which are problematic. To see this, let us consider the symmetrical 2-hand sign \textsc{deter}.
 
-* DISCUSS DETER
+* DETER + other 2-handers??? 
 
 A further issue with Plaskovitskaya's original annotation scheme concerned its reliance on lexical items rather than segments: for the purposes of her study, @Plaskovitskaya:2018 treats all lexical items as single segments in their own right.
 
