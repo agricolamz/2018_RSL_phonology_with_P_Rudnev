@@ -28,10 +28,10 @@ The RSL sign for \textsc{deter} involves two active articulators (H1 and H2) wit
 
 ![\textsc{deter} in @Plaskovitskaya:2018](RSL-phonology-model-DETER.pdf){#fig:deter}
 
-With the knowledge of both the model and the data in hand, we are now in a position to discuss their statistical significance.
+With the basic familiarity with both the model and the data in hand, we are now in a position to discuss their statistical significance. The motivation behind this is as follows: since the model ascribes some features (but not others) a phonological status, this should be visible in the data because subsets of those features---as well as segments of which they consist---will form natural classes like vowels do as opposed to consonants in spoken languages.
 
-
- 
+* why is MCA the best/easiest/simplest method for this?
+    * or why is it sufficient?
 
 # Results {#sec:results}
 
