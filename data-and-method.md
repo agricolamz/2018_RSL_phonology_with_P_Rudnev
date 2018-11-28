@@ -10,9 +10,7 @@ All entries were manually annotated in ELAN v.5.1 [@Crasborn:2008]. The theoret
 
 ## The model: @Plaskovitskaya:2018
 
-The model in @Plaskovitskaya:2018 is a modified version of Van der Kooij's [-@vanderKooij:2002] *Dependency model*. Like @vanderKooij:2002, and unlike most of the other models of sign language phonology, it is inductively organised and crafted on the basis of large datasets, rather than being deductive in character. It is also hierarchical: head nodes can restrict the values of their dependent nodes, which, in turn, modify them. The Dependency model and its descendants differ from most of the other phonological models in viewing movement as a phonetic/prosodic reflex rather than as a separate parameter as described in [@Sec:properties] above. 
-
-Perhaps the most significant departure of @Plaskovitskaya:2018 from @vanderKooij:2002 concerns the placement of the [symmetrical] and [crossed] features in the hierarchical representation of RSL signs: whilst @vanderKooij:2002 situates them inside the Manner node (which is structurally higher than any of the articulators), @Plaskovitskaya:2018 notes that they are restricted to the Active Articulator node, and their original positioning in the Manner node runs the risk of generating unattested interpretations. The proposed hierarchical structure is schematically represented in @Fig:plaskovitskaya.
+The model in @Plaskovitskaya:2018 is a modified version of Van der Kooij's [-@vanderKooij:2002] *Dependency model*. Like @vanderKooij:2002, and unlike most of the other models of sign language phonology, it is inductively organised and crafted on the basis of large datasets, rather than being deductive in character. It is also hierarchical: head nodes can restrict the values of their dependent nodes, which, in turn, modify them. The Dependency model and its descendants differ from most of the other phonological models in viewing movement as a phonetic/prosodic reflex rather than as a separate parameter as described in [@Sec:properties] above. The proposed hierarchical structure of an RSL sign is schematically represented in @Fig:plaskovitskaya. 
 
 ![RSL phonology [@Plaskovitskaya:2018]](RSL-phonology-plaskovitskaya-2018-model.pdf){#fig:plaskovitskaya}
 
@@ -22,18 +20,18 @@ By way of illustration, let us consider a minimal working example of the model a
 
 ![\textsc{betray} in @Plaskovitskaya:2018](RSL-phonology-model-BETRAY.pdf){#fig:betray}
 
-The sign involves two articulators: an active articulator (i.e. the dominant hand) and one passive articulator corresponding to the middle of the signer's face (Location: mid-head). Four fingers of the dominant hand are extended (Curve: straight), and the dominant hand dynamically changes orientation from prone (i.e. palm facing down) to neutral.
+The sign involves two articulators: an active articulator (i.e. the dominant hand) and a passive articulator corresponding to the middle of the signer's face (Location: mid-head). Four fingers of the dominant hand are extended (Curve: straight), and the dominant hand dynamically changes orientation from prone (i.e. palm facing down) to neutral.
 
-Whilst Plaskovitskaya's [-@Plaskovitskaya:2018] model can handle 1-hand signs reasonably well, a complication arises when it comes to 2-hand signs. Even though the model comes equipped with enough flexibility to accommodate those signs which contain multiple articulators and which are asymmetrical (cf. \textsc{betray} above, where the location parameter for the entire sign is encoded into the passive articulator), it is symmetrical 2-hand signs which are problematic. To see this, let us consider the symmetrical 2-hand sign \textsc{deter}.
+Perhaps the most significant departure of @Plaskovitskaya:2018 from @vanderKooij:2002 concerns the placement of the [symmetrical] and [crossed] features in the hierarchical representation of RSL signs:[^4] whilst @vanderKooij:2002 situates them inside the Manner node (which is structurally higher than any of the articulators), @Plaskovitskaya:2018 notes that they are restricted to the Active Articulator node, and their original positioning in the Manner node runs the risk of generating unattested interpretations. To see the necessity of this modification, let us consider the symmetrical 2-hand sign \textsc{deter}, which is schematically represented in @Fig:deter.
 
-* DETER + other 2-handers??? 
+The RSL sign for \textsc{deter} involves two active articulators (H1 and H2) with \textsf{fist} as the requisite handshape synchronically moving along a straight diagonal path from a higher to a lower position in front of the passive articulator (trunk). Since both H1 and H2 are moving symmetrically, the [symmetrical] feature must be present in the representation, which @vanderKooij:2002 situates in the Manner node dominating both the active and passive articulators. This makes the prediction that the sign's symmetricity must also apply to the passive articulator, contrary to fact. @Plaskovitskaya:2018, on the contrary, introduces an additional node that she dubs Multiple articulators above the active articulator but crucially below the passive one, thereby capturing the narrow scope of [symmetrical] in all cases.
 
-A further issue with Plaskovitskaya's original annotation scheme concerned its reliance on lexical items rather than segments: for the purposes of her study, @Plaskovitskaya:2018 treats all lexical items as single segments in their own right.
+![\textsc{deter} in @Plaskovitskaya:2018](RSL-phonology-model-DETER.pdf){#fig:deter}
 
-* WHY DO WE THINK THIS IS A PROBLEM?
-    * (put differently, why did we want to reannotate everything as either 1- or 2-hand signs?)
+With the knowledge of both the model and the data in hand, we are now in a position to discuss their statistical significance.
 
-It is for this reason that we reannotated the corpus for it to also reflect both the 1- *vs.* 2-hand nature of every sign and the presence of multiple segments before running the MCA. The entire project is available for download as a [GitHub repository](https://github.com/agricolamz/2018_RSL_phonology_with_P_Rudnev) at [`https://github.com/agricolamz/2018_RSL_phonology_with_P_Rudnev`](https://github.com/agricolamz/2018_RSL_phonology_with_P_Rudnev). 
+
+ 
 
 # Results {#sec:results}
 
@@ -44,7 +42,7 @@ Having isolated 515 segments on the basis of the new annotation, we subjected th
     * cluster 2 (defined by H1 features including movement to a physiologically less tense position)
     * cluster 3 (less marked class comprising one-hand signs defined by H1 features including movement to a physiologically more tense position)
 
-##### Iconicity ##### {.unnumbered}
+##### Iconicity {.unnumbered}
 
 We can see that even though almost all outliers are iconic, the converse does not hold: rather than 
 
@@ -54,3 +52,5 @@ We can see that even though almost all outliers are iconic, the converse does no
   
   
 [^3]: One set of such difficult cases where annotating the citation form of a sign-language verb is insufficient involves the so-called *agreeing* verbs [see @Pfau:2018 for a recent minimalist analysis], also sometimes dubbed *indicating* verbs [@Schembri:2018], where one or more of a sign's parameters can change depending on the presence of agreement targets in the sentence.
+
+[^4]: The [symmetrical] feature encodes the identity in handshape between H1 and H2, as well as either their identical or mirrored orientation and/or motion. Its semantics can be viewed as essentially a copying operation whereby all features on the node to which it applies (i.e. hand configuration and orientation) are represented on all articulators in its scope. The [crossed] feature notates the fact that the articulators traverse the middle part of the signer's body.
