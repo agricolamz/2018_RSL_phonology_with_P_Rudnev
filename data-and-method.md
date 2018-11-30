@@ -33,35 +33,41 @@ All entries were manually annotated in ELAN v.5.1 [@Crasborn:2008]. The theoret
 
 Since the model does not view movement as being phonological, some of the signs will consist of multiple segments. It therefore stands to reason that whatever procedure is employed for establishing the restrictions on their occurrence and cooccurrence must deal with those segments full signs or even syllables.
 
-We first extracted the segments from the annotation and created a table where all features appear as columns, and the segments as rows (515 segments in total).  As the next step, we calculated for each feature the ratio of segments employing on of the feature's values, shown in @Fig:ratio below.
+We first extracted the segments from the annotation and created a table where all features (19 in total) appear as columns, and the segments (515 segments in total) as rows. A snapshot of the resulting table is presented as @Fig:table.
 
-![Ratio in the whole dataset](ratio-in-whole-dataset.png){#fig:ratio}
+![Data structure following automatic extraction of segments from annotation](data-example.png){#fig:table}
 
-# Method #
+In @Fig:table, Roman numbers encode distinct lexical items, and multiple segments forming a single lexical item appear as adjacent cells in such a way as for their sequential order in the sign to be reflected.
 
-Since all features in Plaskovitskaya's annotation are instances of categorical data, Multiple Correspondence Analysis [MCA, see @Husson:2017, especially ch. 3] appears tailor-made to solve the issue of reducing the dimensionality of the data. In particular, it provides a simple and elegant way of viewing both the features/variables and the segments from the annotation in one and the same coordinate system. Whilst many clusterisation techniques are in principle compatible with the goals of our study, it is the MCA which allows us to abstract away from the binary division/union inherently present in hierarchical clusterisation.
+## Method 
 
-* why is MCA the best/easiest/simplest method for this?
-    * or why is it sufficient?
+To analyse the data that had been collected, we used several tools. First,  we calculated for each feature the ratio of segments employing one of the feature's values. We assume here that the phonological behaviour of a feature could be deduced from the frequency of occurrence of that feature in an annotated lexicon.
+
+Second, we applied Multiple Correspondence Analysis [MCA, see @Husson:2017, especially ch. 3].
+Since all features in Plaskovitskaya's annotation are instances of categorical data, MCA  appears tailor-made to solve the issue of reducing the dimensionality of the data. In particular, it provides a simple and elegant way of viewing both the features/variables and the segments from the annotation in one and the same coordinate system. Whilst many clusterisation techniques are in principle compatible with the goals of our study, it is the MCA which allows us to abstract away from the binary division/union inherently present in hierarchical clusterisation.
+
+
 
 # Results {#sec:results}
 
+With regard to the ratio, a snapshot of which is presented in @Fig:ratio, 
+
+![Ratio in the whole dataset](ratio-in-whole-dataset.png){#fig:ratio}
+
 Having isolated 515 segments on the basis of the new annotation, we subjected them to Multiple Correspondence Analysis [MCA, see @Husson:2017, especially ch. 3], with a view to identifying natural classes based on certain elements of the annotation. 
-
-
 
 * we discovered 3 clusters corresponding to 
     * two-hand signs 
     * cluster 2 (defined by H1 features including movement to a physiologically less tense position)
     * cluster 3 (less marked class comprising one-hand signs defined by H1 features including movement to a physiologically more tense position)
 
-![](a-vot-vse-vmeste.png){#fig:vmeste}
+![The first two dimensions obtained by MCA for the whole dataset](a-vot-vse-vmeste.png){#fig:vmeste}
 
 ##### Iconicity {.unnumbered}
 
 We can see that even though almost all outliers are iconic, the converse does not hold: rather than 
 
-![Iconicity is not significant](iconicity.png){#fig:iconicity}
+![The first two dimensions obtained by MCA for the whole dataset, iconicity colour-coded](iconicity.png){#fig:iconicity}
 
   * **major problem with @Plaskovitskaya:2018: words vs. segments**
   * having amended Plaskovitskaya's original annotation scheme on the basis of the intermediate results, we isolated 515 segments---rather than words---on which to run the MCA.
