@@ -1,0 +1,29 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{newtxtext}
+\usepackage[linguistics]{forest}
+\usetikzlibrary{positioning,fit,shapes}
+
+\begin{document}
+
+
+\begin{forest} %nice empty nodes
+  [Sign
+  [Articulators,name=Arts
+  [,name=arts,no edge
+  [Multiple\\articulators\\\footnotesize{[symmetrical]}][Active\\articulator,name=act
+[[Finger\\selection\\\footnotesize{[fist]},name=fing]]
+]] [Passive\\articulator
+[Location\\\footnotesize{[trunk]}] [Trajectory
+[Path\\\footnotesize{[straight]}] [Setting\\
+\footnotesize{[high-low]}\\
+\footnotesize{[far-near]}
+]
+]
+]
+  ]
+  ]
+  \draw (act.south) -- (fing.north) ;
+  \draw (Arts.south) -- (arts.south) ;
+\end{forest}
+\end{document}

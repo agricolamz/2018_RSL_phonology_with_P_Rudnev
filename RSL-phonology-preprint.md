@@ -2,12 +2,8 @@
 lang: en-GB
 ---
 
-* detailed descriptions of individual sign language phonological systems are rare: the most is known about ASL [@Sandler:1989], NGT [@vanderKooij:2002]; Plaskovitskaya [-@Plaskovitskaya:2018] is the first attempt of compiling a phoneme inventory for RSL
+* detailed descriptions of individual sign language phonological systems are rare: the most is known about ASL [@Sandler:1989], NGT [@vanderKooij:2002]; @Plaskovitskaya:2018 is the first attempt of compiling a phoneme inventory for RSL
 * more typical of phonological research on SLs are solutions to narrowly formulated problems (EXAMPLES)
-* SLs and their properties
-    * iconicity (important for identifying meaningful subparts, i.e. morphemes, and isolating non-meaningful subparts, i.e. phonemes)
-    * segments (REF) aren't easily identifiable, nor are minimal pairs (REF)
-    * *ergo* determining the phonological primitives and their composition is far from obvious
 * aims
     * showcase the phonological diversity of SL lexicon based on the phonological description of the RSL phonological system in its entirety
     * verify the existing phonological description of RSL, suggest improvements

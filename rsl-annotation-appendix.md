@@ -1,0 +1,81 @@
+\appendix
+
+# Features and their attributes #
+
+This appendix comprises the list of all fields and their attributes that were used to annotate the corpus for @Plaskovitskaya:2018.
+
+- H1 (dominant hand)
+- H2 (non-dominant hand)
+- FingerSelection 
+    - thumb 
+    - 1-st (index finger)
+    - 2-nd (middle finger)
+    - 3-rd (ring finger)
+    - 4-th (little finger)
+- Aperture 
+    - open 
+    - closed
+- Curve 
+    - straight
+    - curved
+- Bend
+    - straight
+    - bent 
+- Width 
+    - pointed
+    - wide 
+	- crossed
+- Facing and Focus
+    - tips
+    - root
+    - palm 
+    - back
+    - radial
+    - ulnar
+- Dynamic Orientation
+    - prone (palm facing up)
+    - supine (palm facing down)
+    - forward (bent forwards)
+    - back (bent backwards)
+    - neutral
+- Location
+    - head
+	- neck
+	- shoulder
+	- trunk
+	- arm
+	- hand
+	- space
+	- virtual object
+- Plane
+    - horizontal
+	- parallel
+	- sagittal
+- Settings
+    - x-y (empty/variable start and end points)
+	- high
+	- low
+	- proxi (proximal)
+	- distal
+	- near
+	- far
+	- contra (contralateral)
+	- ipsi (ipsilateral)
+	- in situ
+- Path (Траектория)
+    - straight
+	- arc
+	- circle-clock
+	- circle-counterclock
+	- wave
+	- spiral
+	- iconic
+- Manner
+    - tense
+	- repeated
+	- laceration
+	- symmetrical
+	- alternating
+	- bidirectional
+	- crossed
+

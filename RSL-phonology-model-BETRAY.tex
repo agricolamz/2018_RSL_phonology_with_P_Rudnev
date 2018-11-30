@@ -1,0 +1,27 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{times}
+\usepackage[linguistics]{forest}
+\usetikzlibrary{positioning,fit,shapes}
+
+\begin{document}
+
+
+\begin{forest} %nice empty nodes
+  [Sign
+  [Articulators
+  [Active\\articulator,name=act
+  [Dynamic\\orientation\\\footnotesize{[prone-neutral]}]
+  [Hand\\configuration
+  [Curve\\\footnotesize{[straight]}]
+  [Finger\\selection\\\footnotesize{[1st; 2nd; 3rd; 4th]}]
+  ]
+] [Passive\\articulator
+[Location\\\footnotesize{[head-mid]}] 
+]
+]
+  ] 
+  ]
+]
+\end{forest}
+\end{document}

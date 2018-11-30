@@ -1,7 +1,10 @@
 \documentclass[tikz]{standalone}
 
+\usepackage{newtxtext}
 \usepackage[linguistics]{forest}
 \usetikzlibrary{positioning}
+\usepackage{graphics}
+\dimendef\prevdepth=0
 
 \begin{document}
 
@@ -51,5 +54,6 @@
   \draw ([yshift=3ex]sisterofwidth.south) -- (aperture.north) ;
   \draw (passive.south) -- ([xshift=7ex]passive2.north) ;
 \end{forest}
+
 
 \end{document}
