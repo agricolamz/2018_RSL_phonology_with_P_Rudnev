@@ -1,7 +1,7 @@
 ---
 lang: en-GB
 header-includes: 
-	- \usepackage[top=2cm, bottom=2cm, left=3cm, right=1.5cm]{geometry}
+	- \usepackage[top=2.1cm, bottom=2.1cm, left=3.1cm, right=1.52cm]{geometry}
 	- \linespread{1.325}
 	- \usepackage{scrpage2}
 	- \ifoot[]{}

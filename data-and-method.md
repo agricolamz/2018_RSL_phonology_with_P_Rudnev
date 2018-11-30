@@ -50,16 +50,17 @@ Since all features in Plaskovitskaya's annotation are instances of categorical d
 
 With regard to the ratio, a snapshot of which can be seen in @Fig:ratio, we observe two groups of features: (i) rare ones (mainly 2-hand ones), and (ii) the rest. Amongst the features with the highest frequency rate ratio, Manner-type features show the lowest rate ratio (e.g. manner\_bidirectional), the ratio rising as we move onto the H1 handshape features (e.g. H1 FingerSelection).
 
-![Ratio in the whole dataset](ratio-in-whole-dataset.png){#fig:ratio}
+![Ratio in the whole dataset](ratio.png){#fig:ratio}
 
 Turning to the MCA plot in @Fig:vmeste, it, too, shows a similar distribution of features. The bottom right-hand corner of the graph is occupied by features characterising 2-hand signs, which can be explained by those features' low occurrence rate in the annotation. The second cluster, situated in the top right-hand corner of the graph, can be loosely characterised as a less marked class comprising one-hand signs defined by H1 features that include a change of state from a physiologically less tense state to a physiologically more tense one. 
 
 ![The first two dimensions obtained by MCA for the whole dataset](a-vot-vse-vmeste.png){#fig:vmeste}
 
 To summarise, as a result of applying MCA to our dataset, we discovered 3 clusters corresponding to 
-    * two-hand signs 
-    * signs defined by H1 features including movement to a physiologically less tense position
-    * 1-hand signs defined by H1 features including movement to a physiologically more tense position.
+    
+* two-hand signs 
+* signs defined by H1 features including movement to a physiologically less tense position
+* 1-hand signs defined by H1 features including movement to a physiologically more tense position.
 
 Before proceeding to the discussion of the theoretical significance of the results obtained in the course of the present study, we address the issue of iconicity, and the extent to which it can hinder the identification of phonemes and morphemes of the RSL vocabulary. Since iconicity is part and parcel of linguistic research into various aspects of sign languages regardless of theoretical frameworks and persuasions [see @Kimmelman:2018 for a recent discussion and references], we extended Plaskovitskaya's [-@Plaskovitskaya:2018] annotation scheme to include iconicity, and fed the resulting annotation into the MCA, thereby obtaining the results in @Fig:iconicity.
 
