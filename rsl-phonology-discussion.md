@@ -4,13 +4,14 @@ lang: en-GB
 
 # Discussion {#sec:discussion}
 
+In this paper, we have subjected the only existing phonological model of the structure of RSL signs [@Plaskovitskaya:2018] to empirical scrutiny. 
+
+The first thing to note concerns the intuitive appeal of clusters identified by the MCA. Indeed, the distinction between one-handed and two-handed signs seems important to us as far as sign languages go, and therefore what stands out in Plaskovitskaya's [-@Plaskovitskaya:2018] annotation scheme is the lack of consistency in annotating two-handed signs, which leads to numerous inconsistencies. It is our hope, however, that the amended annotation will take into consideration two-handed signs as well as their features, thereby raising their numbers, and the features will form a more homogeneous continuum.
+
+<!--
 * В целом получившиеся кластеры признаков не то, чтобы невероятные. Различие двуручных--одноручных жестов, кажется важным для жестовых языков. Однако Тошина разметка совсем неоднородна в разметке двуручных жестов и при ближайшем рассмотрении находится много несоответствий. В уточненной разметке процент использования признаков про двуручные жесты подниметься, и использование признаков будет представлять собой более гомогенный континуум.
+-->
 
-* Что нам говорит это с точки зрения теории? С точки зрения фонологии звучащих языков никто не обещает нам, что все признаки будут распространены равномерно, даже наоборот: всегда можно найти фонологические признаки, которые редко встречаются (например, фарингализованность в некоторых языках Кавказа), однако такое не происходит с целыми классами признаков (например, признаки, относящиеся ко всем согласным). Так что, редкое распределение таких выжных признаков для ЖЯ как двуручность, не может иметь такую низкую частотность, что наталкивает нас на мысль о нерепрезентативности выборки жестов или же неточной их разметке. Дальнейшее уточнение разметки позволит лучше понять, какие наборы признаков играют важную роль в фонологии РЖЯ, и какие естественные классы (naturall classes), можно выделить на их основе.
-
-A further issue with Plaskovitskaya's original annotation scheme concerned its reliance on lexical items rather than segments: for the purposes of her study, @Plaskovitskaya:2018 treats all lexical items as single segments in their own right.
-
-* WHY DO WE THINK THIS IS A PROBLEM?
-    * (put differently, why did we want to reannotate everything as either 1- or 2-hand signs?)
+What does this tell us about the theory of phonology? We find that a comparison with spoken languages is useful for illustrating the point at hand. In spoken language phonology, there is no expectation that all features should be distributed evenly. Quite to the contrary, situations abound when an individual feature that is rare nevertheless turns out to be phonological (e.g. pharyngealisation in some languages of the Caucasus), yet this never happens with entire classes of features (e.g. features characterising all consonants at the same time). Therefore, the rare distribution we have observed in the case of so important a class of features as two-handedness should not have such a low frequency ratio, which hints at either the sample not being sufficiently representative or the chosen annotation method being too inconsistent. Further work will help determine which feature sets play an important part in RSL phonology, and which natural classes, if any, can be identified on their basis.
 
 

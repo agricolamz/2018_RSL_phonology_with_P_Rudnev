@@ -48,31 +48,26 @@ Since all features in Plaskovitskaya's annotation are instances of categorical d
 
 # Results {#sec:results}
 
-With regard to the ratio, a snapshot of which is presented in @Fig:ratio, 
-
-Мы видим две группы признаков: редкие --- в основном двуручные, и все остальные.  Признаки с высокой частотностью явно упорядочены по мере возрастания: от признаков способа образования к признакам, относящимся к форме ведущей руки.
+With regard to the ratio, a snapshot of which can be seen in @Fig:ratio, we observe two groups of features: (i) rare ones (mainly 2-hand ones), and (ii) the rest. Amongst the features with the highest frequency rate ratio, Manner-type features show the lowest rate ratio (e.g. manner\_bidirectional), the ratio rising as we move onto the H1 handshape features (e.g. H1 FingerSelection).
 
 ![Ratio in the whole dataset](ratio-in-whole-dataset.png){#fig:ratio}
 
-График MCA показывает похожее деление признаков: справа снизу вместе сгруппировались признаки, относящиеся к двуручным жестам, что видимо объясняется тем, что эти признаки достаточно редко встречались в разметке. Вторая группировка, в првом верхнем углу, появившаяся в MCA относится к physiologically less tense position. 
+Turning to the MCA plot in @Fig:vmeste, it, too, shows a similar distribution of features. The bottom right-hand corner of the graph is occupied by features characterising 2-hand signs, which can be explained by those features' low occurrence rate in the annotation. The second cluster, situated in the top right-hand corner of the graph, can be loosely characterised as a less marked class comprising one-hand signs defined by H1 features that include a change of state from a physiologically less tense state to a physiologically more tense one. 
 
 ![The first two dimensions obtained by MCA for the whole dataset](a-vot-vse-vmeste.png){#fig:vmeste}
 
-* we discovered 3 clusters corresponding to 
+To summarise, as a result of applying MCA to our dataset, we discovered 3 clusters corresponding to 
     * two-hand signs 
-    * cluster 2 (defined by H1 features including movement to a physiologically less tense position)
-    * cluster 3 (less marked class comprising one-hand signs defined by H1 features including movement to a physiologically more tense position)
+    * signs defined by H1 features including movement to a physiologically less tense position
+    * 1-hand signs defined by H1 features including movement to a physiologically more tense position.
 
-##### Iconicity {.unnumbered}
+Before proceeding to the discussion of the theoretical significance of the results obtained in the course of the present study, we address the issue of iconicity, and the extent to which it can hinder the identification of phonemes and morphemes of the RSL vocabulary. Since iconicity is part and parcel of linguistic research into various aspects of sign languages regardless of theoretical frameworks and persuasions [see @Kimmelman:2018 for a recent discussion and references], we extended Plaskovitskaya's [-@Plaskovitskaya:2018] annotation scheme to include iconicity, and fed the resulting annotation into the MCA, thereby obtaining the results in @Fig:iconicity.
 
-Иконичность --- центральная тема в исследованиях по ЖЯ (см. нашу с Вадиком и Аней Клезовчи статью). Мы решили разметить каждый из исследуемых жестов на иконичность. В целом, нельзя сказать, что иконичность связана (correlates) с каким-то из имеющихся признаков. We can see that even though almost all outliers are iconic, the converse does not hold: rather than 
 
 ![The first two dimensions obtained by MCA for the whole dataset, iconicity colour-coded](iconicity.png){#fig:iconicity}
 
-  * **major problem with @Plaskovitskaya:2018: words vs. segments**
-  * having amended Plaskovitskaya's original annotation scheme on the basis of the intermediate results, we isolated 515 segments---rather than words---on which to run the MCA.
-  * we propose that Plaskovitskaya's [-@Plaskovitskaya:2018] analysis can be simplified further
-  
+@Fig:iconicity indicates that, on average, iconicity seems not to correlate with any particular feature from our annotation.  We can see that, even though almost all outliers are iconic, the converse does not hold: the main cluster involves both iconic and non-iconic signs in roughly equal proportions.
+
   
 [^3]: One set of such difficult cases where annotating the citation form of a sign-language verb is insufficient involves the so-called *agreeing* verbs [see @Pfau:2018 for a recent minimalist analysis], also sometimes dubbed *indicating* verbs [@Schembri:2018], where one or more of a sign's parameters can change depending on the presence of agreement targets in the sentence.
 
