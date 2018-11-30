@@ -1,0 +1,292 @@
+---
+author: "G. Moroz"
+output: 
+  html_document:
+    df_print: paged
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warnings = FALSE, fig.width = 12, fig.height = 7)
+library(tidyverse)
+theme_set(theme_bw())
+```
+
+```{r}
+df <- read_csv("segments_old.csv", na = "")
+df$label <- paste(df$Sign, df$segment)
+colnames(df)
+```
+
+```{r}
+data_frame(value = colMeans(!is.na(df[,-c(1, 12, 21:26, 33:35)])),
+           features = names(colMeans(!is.na(df[,-c(1, 12, 21:26, 33:35)])))) %>% 
+  mutate(features = reorder(features, value)) %>% 
+  ggplot(aes(features, value, label = round(value, 3)))+
+  ggrepel::geom_text_repel()+
+  geom_point()+
+  coord_flip()+
+  labs(x="", y = "ratio in the whole dataset")
+```
+
+```{r}
+read_csv("segments_old.csv", na = "") %>% 
+  select(-c(1,12, 21:26))  ->
+  df_mca
+
+df_mca <- as.data.frame(sapply(df_mca , factor))
+
+MCA <- MASS::mca(df_mca)
+df <- cbind(df, MCA$rs)
+variables <- as_data_frame(MCA$cs)
+variables$var_names <- rownames(MCA$cs)
+```
+
+##  {.tabset .tabset-fade .tabset-pills}
+
+### Meaning
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, label = label))+
+  geom_text()
+```
+
+### H1.FingerSelection
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H1 FingerSelection`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### H1.Aperture
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H1 Aperture`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### H1.Curve
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H1 Curve`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### H1.Bent
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H1 Bent`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### H1.Facing
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H1 Facing`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### H1.Focus
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H1 Focus`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### H1.Width
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H1 Width`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### Dynamic.Orientation
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `Dynamic Orientation`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### Location
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = Location))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### Plane
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = Plane))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### Settings
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = Settings))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### Path
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = Path))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### H2.FingerSelection
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H2 FingerSelection`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### H2.Aperture
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H2 Aperture`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### H2.Curve
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H2 Curve`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### H2.Bent
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H2 Bent`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### H2.Width
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H2 Width`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### H2.Facing
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H2 Facing`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### H2.Focus
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = `H2 Focus`))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### manner_tense
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = manner_tense))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### manner_repeated
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = manner_repeated))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### manner_laceration
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = manner_laceration))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### manner_symmetrical
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = manner_symmetrical))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### manner_alternating
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = manner_alternating))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### manner_biderectional
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = manner_biderectional))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### manner_alternating
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = manner_alternating))+
+  geom_point()+
+  stat_ellipse()
+```
+
+### iconicity
+
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`, color = iconic))+
+  geom_point()+
+  stat_ellipse()
+```
+
+
+```{r}
+df %>% 
+  arrange(desc(`1`)) %>% 
+  select(labeled_url, `1`,`2`) %>% 
+  DT::datatable(escape = FALSE, options = list(pageLength = 10, dom = 'ftip'))
+```
+
+```{r}
+variables %>% 
+  ggplot(aes(`1`, `2`, label = var_names))+
+  geom_text()
+#  scale_x_continuous(limits = c(-0.03, 0.06))
+```
+
+```{r}
+df %>% 
+  ggplot(aes(`1`, `2`))+
+  geom_text(data = variables, aes(`1`, `2`, label = var_names))+
+  geom_point(color = "red")
+```
