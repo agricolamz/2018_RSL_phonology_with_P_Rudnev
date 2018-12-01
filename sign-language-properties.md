@@ -9,7 +9,11 @@ Russian Sign Language is a natural sign language used by Deaf and hard-of-hearin
 
 According to @Burkova:2012, RSL displays a significant amount of regional dialectal variation that is primarily restricted to the lexical domain, though the exact numbers quantifying the lexical differences between the Moscow and Siberian dialects, or the Moscow dialect and the Belarusian dialect are as yet unavailable. In the absence of evidence to the contrary and for the purposes of this paper, we treat the observed contrasts as invariant.
 
+<<<<<<< HEAD
 Despite a growing number of publications on various aspects of RSL [cf. @Kimmelman:2014 *et seq.* on RSL syntax and information structure; БУРКОВА, Маша К., Лиза и т. п. LIST MORE REFERENCES!], the language in general, and its phonology in particular, still remain severely understudied. Before we address the issue of identifying RSL phonological primitives, a few general remarks are in order on the approach and method of sign language phonology.
+=======
+Despite a growing number of publications on various aspects of RSL [cf. @Kimmelman:2014 *et seq.* on RSL syntax and information structure], the language in general, and its phonology in particular, still remain severely understudied. Before we address the issue of identifying RSL phonological primitives, a few general remarks are in order on the approach and method of sign language phonology.
+>>>>>>> fc895b2af1c0e39878e11a2fab18921022a571c7
 
 ## Sign languages and their phonologies {#sec:sl-phonologies}
 
