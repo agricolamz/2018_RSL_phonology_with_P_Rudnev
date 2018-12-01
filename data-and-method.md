@@ -7,13 +7,15 @@ We take @Plaskovitskaya:2018, which is, as far as we are aware, the only existin
 
 The model in @Plaskovitskaya:2018 is a modified version of Van der Kooij's [-@vanderKooij:2002] *Dependency model*. Like @vanderKooij:2002, and unlike most of the other models of sign language phonology, it is inductively organised and crafted on the basis of large datasets, rather than being deductive in character. It is also hierarchical: head nodes can restrict the values of their dependent nodes, which, in turn, modify them. The Dependency model and its descendants differ from most of the other phonological models  [e.g. @Sandler:1996] in viewing movement as a phonetic/prosodic reflex rather than as a separate parameter as described in [@Sec:properties] above. In such a model, signs are conceptualised as consisting of at least two states (e.g. an initial state and a final state), movement being a mere transition from the initial state to the final state. The proposed hierarchical structure of an RSL sign is schematically represented in @Fig:plaskovitskaya. 
 
-![RSL phonology [@Plaskovitskaya:2018]](RSL-phonology-plaskovitskaya-2018-model.pdf){#fig:plaskovitskaya}
+![segment structure in RSL phonological system[@Plaskovitskaya:2018]](RSL-phonology-plaskovitskaya-2018-model.pdf){#fig:plaskovitskaya}
 
 As can be glimpsed from the representation in @Fig:plaskovitskaya, @Plaskovitskaya:2018 indeed follows @vanderKooij:2002 in removing movement in the case of the active articulator from within the purview of phonology and assigns it a phonetic/prosodic status, whereas the passive articulator is specified with both Location and Trajectory nodes with an internal complexity of their own.
 
 By way of illustration, let us consider a minimal working example of the model at work: the RSL  sign for \textsc{betray}, for instance, will receive the schematic representation in @Fig:betray.
 
 ![\textsc{betray} in @Plaskovitskaya:2018](RSL-phonology-model-BETRAY.pdf){#fig:betray}
+
+% мне кажется, что нужно сопровождать деревья картинками. Прям в дерево вставить узел, который отправит картинку, слева от дерева
 
 The sign involves two articulators: an active articulator (i.e. the dominant hand) and a passive articulator corresponding to the middle of the signer's face (Location: mid-head). Four fingers of the dominant hand are extended (Curve: straight), and the dominant hand dynamically changes orientation from prone (i.e. palm facing down) to neutral.
 
@@ -27,13 +29,13 @@ With the basic familiarity with both the model in hand, we are now in a position
 
 ## Data
 
-Plaskovitskaya's [-@Plaskovitskaya:2018] corpus consists of  400 primarily monomorphemic, citation-form verbs taken from the [*Spread the Sign* dictionary](http://www.spreadthesign.com/be/) in the Belarusian dialect of Russian Sign Language. Because the signs normally appear in the dictionary in their citation form, annotation also resorted to entries from other dialects of RSL from the same dictionary as well as field notes from elicitation sessions with the native signers of the Belarusian dialect of RSL to resolve any potential ambiguities and facilitate decision making.[^3]
+Plaskovitskaya's [-@Plaskovitskaya:2018] corpus consists of  400 primarily monomorphemic, citation-form verbs taken from the [*Spread the Sign* dictionary](http://www.spreadthesign.com/be/) in the Belarusian dialect of RSL. Because the signs normally appear in the dictionary in their citation form, annotation also resorted to entries from other dialects of RSL from the same dictionary as well as field notes from elicitation sessions with the native signers of the Belarusian dialect of RSL to resolve any potential ambiguities and facilitate decision making.[^3]
 
 All entries were manually annotated in ELAN v.5.1 [@Crasborn:2008]. The theoretical model buttressing the annotation is Van der Kooij's [-@vanderKooij:2002] Dependency model with minor modifications, briefly addressed directly below. The approach to annotation is intentionally detailed: even minute features are annotated or introduced to test the theoretical predictions regarding their status as RSL phonemes, paving the way for statistically oriented studies such as the one attempted in this paper. The data, their annotation in the `.eaf` format and a dedicated script to facilitate corpus navigation are all freely available for download as a [GitHub repository](https://github.com/ToszaPlaskovickaja/Term_paper) at [`https://github.com/ToszaPlaskovickaja/Term_paper`](https://github.com/ToszaPlaskovickaja/Term_paper).
 
 Since the model does not view movement as being phonological, some of the signs will consist of multiple segments. It therefore stands to reason that whatever procedure is employed for establishing the restrictions on their occurrence and cooccurrence must deal with those segments full signs or even syllables.
 
-We first extracted the segments from the annotation and created a table where all features (19 in total) appear as columns, and the segments (515 segments in total) as rows. A snapshot of the resulting table is presented as @Fig:table.
+We first automatically extracted the segments from the annotation and created a table where all features (19 in total) appear as columns, and the segments (515 segments in total) as rows. A snapshot of the resulting table is presented as @Fig:table. All data manipulations were made with R [@R:2018], all visualisations were created with `ggplot2` package [@Wickham:2016].
 
 ![Data structure following automatic extraction of segments from annotation](data-example.png){#fig:table}
 
@@ -43,16 +45,15 @@ In @Fig:table, Roman numbers encode distinct lexical items, and multiple segment
 
 To analyse the data that had been collected, we used several tools. First,  we calculated for each feature the ratio of segments employing one of the feature's values. Simplifying somewhat, we assume here that the phonological behaviour of a feature could be deduced from the frequency of occurrence of that feature in an annotated lexicon.
 
-Second, we applied Multiple Correspondence Analysis [MCA, see @Husson:2017, especially ch. 3].
-Since all features in Plaskovitskaya's annotation are instances of categorical data, MCA  appears tailor-made to solve the issue of reducing the dimensionality of the data. In particular, it provides a simple and elegant way of viewing both the feature values and the segments from the annotation in one and the same coordinate system. Whilst many clusterisation techniques are in principle compatible with the goals of our study, it is the MCA which allows us to abstract away from the binary division/union inherently present in hierarchical clusterisation.
+Second, we applied Multiple Correspondence Analysis [MCA, see @Husson:2017, especially ch. 3]. Since all features in Plaskovitskaya's annotation are instances of categorical data, MCA  appears tailor-made to solve the issue of reducing the dimensionality of the data. In particular, it provides a way of visualisation both the feature values and the segments from the annotation in one and the same coordinate system. Whilst many clusterisation techniques are in principle compatible with the goals of our study, it is the MCA which allows us to abstract away from the binary division/union inherently present in hierarchical clusterisation.
 
 # Results {#sec:results}
 
-With regard to the ratio, a snapshot of which can be seen in @Fig:ratio, we observe two groups of features: (i) rare ones (mainly two-handed ones), and (ii) the rest. Amongst the features with the highest frequency rate ratio, Manner-type features show the lowest rate ratio (e.g. manner\_bidirectional), the ratio rising as we move onto the H1 handshape features (e.g. H1 FingerSelection).
+With regard to the ratio that is plotted  on x axis in @Fig:ratio, we observe two groups of features ploted on y axis: (i) rare ones (e. g. H2 Aperture, H2 Focus, H2 Width etc.), and (ii) the rest (e. g. Location, H1 Finger Selection etc.). Features with the smalest ratio are seems to be mainly associated with tow-handed feeatures. Amongst the features with the highest frequency rate ratio, Manner-type features show the lowest rate ratio (e.g. manner\_bidirectional), the ratio rising as we move onto the H1 handshape features (e.g. H1 FingerSelection). 
 
 ![Ratio in the whole dataset](ratio.png){#fig:ratio}
 
-Turning to the MCA plot in @Fig:vmeste, it, too, shows a similar distribution of features. The bottom right-hand corner of the graph is occupied by features characterising two-handed signs, which can be explained by those features' low occurrence rate in the annotation. The second cluster, situated in the top right-hand corner of the graph, can be loosely characterised as a less marked class comprising one-hand signs defined by H1 features that include a change of state from a physiologically less tense state to a physiologically more tense one. 
+Now we turn to the MCA plot in @Fig:vmeste. Since MCA provides dimensionality reduction from multiple dimensions to more optimal spaces, x and y axes are meaningless itself. The plot shows a similar distribution of features. The bottom right-hand corner of the graph is occupied by features characterising two-handed signs, which can be explained by those features' low occurrence rate in the annotation. The second cluster, situated in the top right-hand corner of the graph, can be loosely characterised as a less marked class comprising one-hand signs defined by H1 features that include a change of state from a physiologically less tense state to a physiologically more tense one. 
 
 ![The first two dimensions obtained by MCA for the whole dataset](a-vot-vse-vmeste.png){#fig:vmeste}
 
