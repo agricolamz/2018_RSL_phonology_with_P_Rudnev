@@ -13,13 +13,13 @@ header-includes:
 
 \thispagestyle{empty}
 
-**INVENT AN IMAGINATIVE TITLE AND PUT IT HERE**[^1]
+**Automatic Natural Phonological Classes detection in Russian Sign Language**[^1]
 
 The present paper attempts to use Multiple Correspondence Analysis to establish ...
 
 \vspace*{2em}
 
-Keywords: phoneme, phonology, sign languages, Multiple Correspondence Analysis, Russian Sign Language
+Keywords: phonology, phonological features, sign languages, Multiple Correspondence Analysis, Russian Sign Language
 
 JEL Classification: Z.
 
@@ -27,7 +27,7 @@ JEL Classification: Z.
 
 # Introduction #
 
-Despite the abundance of research into the phonological systems of sign languages precipitated by the seminal work of @Stokoe:1960, full-scale phonological descriptions of individual sign languages are extremely rare, American Sign Language (ASL) being a notable exception [@Stokoe:1960; @Sandler:1989, amongst many others]. More typical of research into sign language phonology is the situation where narrowly defined problems are given a solution based on considering individual aspects of individual sign language phonologies [@Battison:1974; @Lane:1976; @Boyes:1982; @Wilbur:1990; @Siedlecki:1993; @Sandler:1996; @Sandier:1999; @Fontana:2008; @Pfau:2008; @Israel:2009; @Brentari:2011]. EXAMPLES with REFERENCES Other sign languages whose phonological systems have been described in their entirety include Sign Language of the Netherlands [NGT, @vanderKooij:2002], British Sign Language [BSL, @Channon:2002], Turkish Sign Language [@Kubucs:2008], and, recently, Russian Sign Language (RSL). @Plaskovitskaya:2018 is the first attempt at checking the predictions of existing theories formulated on the basis of other sign languages for RSL, and compiling a preliminary set of phonological primitives and sketching their composition.
+Despite the abundance of research into the phonological systems of sign languages precipitated by the seminal work of @Stokoe:1960, full-scale phonological descriptions of individual sign languages are extremely rare, American Sign Language (ASL) being a notable exception [@Stokoe:1960; @Sandler:1989, amongst many others]. More typical of research into sign language phonology is the situation where narrowly defined problems are given a solution based on considering individual aspects of individual sign language phonologies [@Battison:1974; @Lane:1976; @Boyes:1982; @Wilbur:1990; @Siedlecki:1993; @Sandler:1996; @Sandier:1999; @Fontana:2008; @Pfau:2008; @Israel:2009; @Brentari:2011]. Other sign languages whose phonological systems have been described in their entirety include Sign Language of the Netherlands [@vanderKooij:2002], British Sign Language [@Channon:2002], Turkish Sign Language [@Kubucs:2008], and, recently, Russian Sign Language [RSL, @Plaskovitskaya:2018] is the first attempt at checking the predictions of existing theories formulated on the basis of other sign languages for RSL, and compiling a preliminary set of phonological primitives and sketching their composition.
 
 This paper aims at showcasing the phonological diversity of RSL on the basis of a description of the RSL phonological system in its entirety, whilst also testing its descriptive adequacy.
 
