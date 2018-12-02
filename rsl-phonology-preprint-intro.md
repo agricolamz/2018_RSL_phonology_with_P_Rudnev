@@ -4,6 +4,7 @@ header-includes:
 	- \usepackage[top=2.1cm, bottom=2.1cm, left=3.1cm, right=1.52cm]{geometry}
 	- \linespread{1.325}
 	- \usepackage{scrpage2}
+	- \usepackage{newtxmath}
 	- \ifoot[]{}
 	- \cfoot[]{}
 	- \ofoot[\pagemark]{\pagemark}

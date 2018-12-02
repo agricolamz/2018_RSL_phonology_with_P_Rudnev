@@ -7,7 +7,7 @@ We take @Plaskovitskaya:2018, which is, as far as we are aware, the only existin
 
 The model in @Plaskovitskaya:2018 is a modified version of Van der Kooij's [-@vanderKooij:2002] *Dependency model*. Like @vanderKooij:2002, and unlike most of the other models of sign language phonology, it is inductively organised and crafted on the basis of large datasets, rather than being deductive in character. It is also hierarchical: head nodes can restrict the values of their dependent nodes, which, in turn, modify them. The Dependency model and its descendants differ from most of the other phonological models  [e.g. @Sandler:1996] in viewing movement as a phonetic/prosodic reflex rather than as a separate parameter as described in [@Sec:properties] above. In such a model, signs are conceptualised as consisting of at least two states (e.g. an initial state and a final state), movement being a mere transition from the initial state to the final state. The proposed hierarchical structure of an RSL sign is schematically represented in @Fig:plaskovitskaya. 
 
-![segment structure in RSL phonological system[@Plaskovitskaya:2018]](RSL-phonology-plaskovitskaya-2018-model.pdf){#fig:plaskovitskaya}
+![segment structure in RSL phonological system [@Plaskovitskaya:2018]](RSL-phonology-plaskovitskaya-2018-model.pdf){#fig:plaskovitskaya}
 
 As can be glimpsed from the representation in @Fig:plaskovitskaya, @Plaskovitskaya:2018 indeed follows @vanderKooij:2002 in removing movement in the case of the active articulator from within the purview of phonology and assigns it a phonetic/prosodic status, whereas the passive articulator is specified with both Location and Trajectory nodes with an internal complexity of their own.
 
@@ -15,8 +15,8 @@ By way of illustration, let us consider a minimal working example of the model a
 
 ![\textsc{betray} in @Plaskovitskaya:2018](RSL-phonology-model-BETRAY.pdf){#fig:betray}
 
-% мне кажется, что нужно сопровождать деревья картинками. Прям в дерево вставить узел, который отправит картинку, слева от дерева
-
+<!--- мне кажется, что нужно сопровождать деревья картинками. Прям в дерево вставить узел, который отправит картинку, слева от дерева
+--->
 The sign involves two articulators: an active articulator (i.e. the dominant hand) and a passive articulator corresponding to the middle of the signer's face (Location: mid-head). Four fingers of the dominant hand are extended (Curve: straight), and the dominant hand dynamically changes orientation from prone (i.e. palm facing down) to neutral.
 
 Perhaps the most significant departure of @Plaskovitskaya:2018 from @vanderKooij:2002 concerns the placement of the [symmetrical] and [crossed] features in the hierarchical representation of RSL signs:[^4] whilst @vanderKooij:2002 situates them inside the Manner node (which is structurally higher than any of the articulators), @Plaskovitskaya:2018 notes that they are restricted to the Active Articulator node, and their original positioning in the Manner node runs the risk of generating unattested interpretations. To see the necessity of this modification, let us consider the symmetrical two-handed sign \textsc{deter}, which is schematically represented in @Fig:deter.
@@ -49,11 +49,11 @@ Second, we applied Multiple Correspondence Analysis [MCA, see @Husson:2017, espe
 
 # Results {#sec:results}
 
-With regard to the ratio that is plotted  on x axis in @Fig:ratio, we observe two groups of features ploted on y axis: (i) rare ones (e. g. H2 Aperture, H2 Focus, H2 Width etc.), and (ii) the rest (e. g. Location, H1 Finger Selection etc.). Features with the smalest ratio are seems to be mainly associated with tow-handed feeatures. Amongst the features with the highest frequency rate ratio, Manner-type features show the lowest rate ratio (e.g. manner\_bidirectional), the ratio rising as we move onto the H1 handshape features (e.g. H1 FingerSelection). 
+With regard to the ratio that is plotted  on the $x$ axis in @Fig:ratio, we observe two groups of features plotted on the $y$ axis: (i) rare ones (e.g. H2 Aperture, H2 Focus, H2 Width etc.), and (ii) the rest (e.g. Location, H1 Finger Selection etc.). Features with the lowest ratio seem to be mainly associated with two-handed features. Amongst the features with the highest frequency rate ratio, Manner-type features show the lowest rate ratio (e.g. manner\_bidirectional), the ratio rising as we move onto the H1 handshape features (e.g. H1 FingerSelection). 
 
 ![Ratio in the whole dataset](ratio.png){#fig:ratio}
 
-Now we turn to the MCA plot in @Fig:vmeste. Since MCA provides dimensionality reduction from multiple dimensions to more optimal spaces, x and y axes are meaningless itself. The plot shows a similar distribution of features. The bottom right-hand corner of the graph is occupied by features characterising two-handed signs, which can be explained by those features' low occurrence rate in the annotation. The second cluster, situated in the top right-hand corner of the graph, can be loosely characterised as a less marked class comprising one-hand signs defined by H1 features that include a change of state from a physiologically less tense state to a physiologically more tense one. 
+Now we turn to the MCA plot in @Fig:vmeste. Since MCA provides dimensionality reduction from multiple dimensions to more optimal spaces, the $x$ and $y$ axes themselves are meaningless. The plot shows a similar distribution of features. The bottom right-hand corner of the graph is occupied by features characterising two-handed signs, which can be explained by those features' low occurrence rate in the annotation. The second cluster, situated in the top right-hand corner of the graph, can be loosely characterised as a less marked class comprising one-handed signs defined by H1 features that include a change of state from a physiologically less tense state to a physiologically more tense one. 
 
 ![The first two dimensions obtained by MCA for the whole dataset](a-vot-vse-vmeste.png){#fig:vmeste}
 
@@ -63,7 +63,7 @@ To summarise, as a result of applying MCA to our dataset, we discovered 3 cluste
 * signs defined by H1 features including movement to a physiologically less tense position
 * one-handed signs defined by H1 features including movement to a physiologically more tense position.
 
-Before proceeding to the discussion of the theoretical significance of the results obtained in the course of the present study, we address the issue of iconicity, and the extent to which it can hinder the identification of phonemes and morphemes of the RSL vocabulary. Since iconicity is part and parcel of linguistic research into various aspects of sign languages regardless of theoretical frameworks and persuasions [see @Kimmelman:2018 for a recent discussion and references], we extended Plaskovitskaya's [-@Plaskovitskaya:2018] annotation scheme to include iconicity, and fed the resulting annotation into the MCA, thereby obtaining the results in @Fig:iconicity.
+Before proceeding to the discussion of the theoretical significance of the results obtained in the course of the present study, we address the issue of iconicity, and the extent to which it can hinder the identification of phonemes and morphemes of the RSL vocabulary. Since iconicity is part and parcel of linguistic research into various aspects of sign languages regardless of theoretical frameworks and persuasions [see @Kimmelman:2018 for a recent discussion and references], we extended Plaskovitskaya's [-@Plaskovitskaya:2018] annotation scheme to include iconicity, and fed the resulting annotation back into the MCA, thereby obtaining the results in @Fig:iconicity.
 
 
 ![The first two dimensions obtained by MCA for the whole dataset, iconicity colour-coded](iconicity.png){#fig:iconicity}

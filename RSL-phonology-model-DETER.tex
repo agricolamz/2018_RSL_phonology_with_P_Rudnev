@@ -3,12 +3,14 @@
 \usepackage{newtxtext}
 \usepackage[linguistics]{forest}
 \usetikzlibrary{positioning,fit,shapes}
+\usepackage{graphicx}
 
 \begin{document}
 
 
-\begin{forest} %nice empty nodes
-  [Sign
+
+  \begin{forest} %nice empty nodes
+     [Sign
   [Articulators,name=Arts
   [,name=arts,no edge
   [Multiple\\articulators\\\footnotesize{[symmetrical]}][Active\\articulator,name=act
@@ -26,4 +28,6 @@
   \draw (act.south) -- (fing.north) ;
   \draw (Arts.south) -- (arts.south) ;
 \end{forest}
+
+
 \end{document}
