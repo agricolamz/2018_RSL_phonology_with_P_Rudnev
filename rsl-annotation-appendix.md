@@ -62,7 +62,7 @@ This appendix comprises the list of all fields and their attributes that were us
 	- contra (contralateral)
 	- ipsi (ipsilateral)
 	- in situ
-- Path (Траектория)
+- Path 
     - straight
 	- arc
 	- circle-clock
