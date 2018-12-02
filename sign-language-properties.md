@@ -1,7 +1,7 @@
 
 # RSL and the internal structure of signs {#sec:properties}
 
-This section briefly describes the sociolinguistic context surrounding RSL and lays out our background assumptions regarding the internal structure of lexical items in sign languages, which is based on broadly the same set of principles in most sign languages studied to date.[^2]
+This section briefly describes the sociolinguistic context surrounding RSL and lays out our background assumptions regarding the internal structure of lexical items in sign languages, which is based on broadly the same set of principles in most sign languages studied to date.[^5]
 
 ## RSL: key facts {#sec:rsl-key-facts}
 
@@ -34,4 +34,4 @@ To solve the problem of the overabundance of phonological primitives in sign lan
 
 In this paper we adopt van der Kooij's [-@vanderKooij:2002] approach of constructing minimal pairs and augment it by subjecting the preliminarily identified phonological primitives to statistical testing. In particular, we employ the Multiple Correspondence Analysis technique with a view to determining if the primitives in question form natural classes in a manner roughly similar to the way in which vowels and consonants of spoken languages form natural classes with a few elements in between.
 
-[^2]: Here we only limit ourselves to a concise description of the most basic of properties, but see @Fenlon:2018 and references therein for a detailed overview of issues relating to sign language phonology.
+[^5]: Here we only present a concise and plausibly oversimplified description of the most basic of properties, but see @Fenlon:2018 and references therein for a detailed overview of issues relating to sign language phonology.
