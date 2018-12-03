@@ -9,7 +9,7 @@ header-includes:
   - \linespread{1.325}
 ---
 
-# Appendix 1: code for creating visualisations
+# R code for creating visualisations
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(eval = FALSE, message = FALSE, warnings = FALSE, fig.width = 12, fig.height = 7)
