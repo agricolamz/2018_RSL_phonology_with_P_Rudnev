@@ -1,14 +1,10 @@
 ---
-author: "G. Moroz"
-output: 
-  html_document:
-    df_print: paged
-editor_options: 
-  chunk_output_type: console
+output:
+  pdf_document: default
+  html_document: default
 ---
-
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warnings = FALSE, fig.width = 12, fig.height = 7)
+knitr::opts_chunk$set(eval = FALSE, message = FALSE, warnings = FALSE, fig.width = 12, fig.height = 7)
 library(tidyverse)
 theme_set(theme_bw())
 ```
@@ -20,8 +16,8 @@ colnames(df)
 ```
 
 ```{r}
-data_frame(value = colMeans(!is.na(df[,-c(1, 12, 21:26, 33:35)])),
-           features = names(colMeans(!is.na(df[,-c(1, 12, 21:26, 33:35)])))) %>% 
+data_frame(value = colMeans(!is.na(df[,-c(1, 12, 21:26, 33)])),
+           features = names(colMeans(!is.na(df[,-c(1, 12, 21:26, 33)])))) %>% 
   mutate(features = reorder(features, value)) %>% 
   ggplot(aes(features, value, label = round(value, 3)))+
   ggrepel::geom_text_repel()+
