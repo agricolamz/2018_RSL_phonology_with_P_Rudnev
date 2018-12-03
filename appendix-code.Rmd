@@ -6,6 +6,7 @@ mainfont: Times New Roman
 geometry: "top=2.1cm, bottom=2.1cm, left=3.1cm, right=1.52cm"
 header-includes:
   - \setcounter{page}{19}
+  - \linespread{1.325}
 ---
 
 # Appendix 1: code for creating visualisations
