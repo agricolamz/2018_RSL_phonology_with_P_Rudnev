@@ -1,7 +1,11 @@
 ---
 output:
-  pdf_document: default
-  html_document: default
+  pdf_document:
+    latex_engine: xelatex
+mainfont: Times New Roman
+geometry: "top=2.1cm, bottom=2.1cm, left=3.1cm, right=1.52cm"
+header-includes:
+  - \setcounter{page}{19}
 ---
 
 # Appendix 1: code for creating visualisations
