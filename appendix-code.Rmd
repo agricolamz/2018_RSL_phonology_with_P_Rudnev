@@ -3,13 +3,16 @@ output:
   pdf_document: default
   html_document: default
 ---
+
+# Appendix 1: code for creating visualisations
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(eval = FALSE, message = FALSE, warnings = FALSE, fig.width = 12, fig.height = 7)
-library(tidyverse)
-theme_set(theme_bw())
 ```
 
 ```{r}
+library(tidyverse)
+theme_set(theme_bw())
 df <- read_csv("segments_old.csv", na = "")
 df$label <- paste(df$Sign, df$segment)
 colnames(df)
