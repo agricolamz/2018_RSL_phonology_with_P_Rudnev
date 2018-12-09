@@ -45,7 +45,7 @@ In @Fig:table, Roman numbers encode distinct lexical items, and multiple segment
 
 To analyse the data that had been collected, we used several tools. First,  we calculated for each feature the ratio of segments employing one of the feature's values. Simplifying somewhat, we assume here that the phonological behaviour of a feature could be deduced from the frequency of occurrence of that feature in an annotated lexicon.
 
-Second, we applied Multiple Correspondence Analysis [MCA, see @Husson:2017, especially ch. 3]. Since all features in Plaskovitskaya's annotation are instances of categorical data, MCA  appears tailor-made to solve the issue of reducing the dimensionality of the data. In particular, it provides a way of visualisation both the feature values and the segments from the annotation in one and the same coordinate system. Whilst many clusterisation techniques are in principle compatible with the goals of our study, it is the MCA which allows us to abstract away from the binary division/union inherently present in hierarchical clusterisation.
+Second, we applied Multiple Correspondence Analysis [MCA, see @Husson:2017, especially ch. 3]. Since all features in Plaskovitskaya's annotation are instances of categorical data, MCA  appears tailor-made to solve the issue of reducing the dimensionality of the data. In particular, it provides a way of visualising both the feature values and the segments from the annotation in one and the same coordinate system. Whilst many clusterisation techniques are in principle compatible with the goals of our study, it is the MCA which allows us to abstract away from the binary division/union inherently present in hierarchical clusterisation.
 
 # Results {#sec:results}
 
